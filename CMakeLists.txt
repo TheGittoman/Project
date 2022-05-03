@@ -8,11 +8,18 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 add_subdirectory(src)
 
-target_link_directories(${PROJECT_NAME} PRIVATE 
-  src
+target_include_directories(${PROJECT_NAME} 
+  PUBLIC src
 )
 
-target_link_libraries(${PROJECT_NAME} header)
+
+target_link_directories(${PROJECT_NAME} 
+  PRIVATE src
+)
+
+target_link_libraries(${PROJECT_NAME} 
+  header
+)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
