@@ -24,7 +24,7 @@ target_link_directories(${PROJECT_NAME}
   PRIVATE external/imgui
 )
 
-target_link_libraries(${PROJECT_NAME} header glfw IMGUI opengl32)
+target_link_libraries(${PROJECT_NAME} header glfw imgui opengl32)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
