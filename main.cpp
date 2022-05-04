@@ -6,7 +6,12 @@
 
 #include <GLFW/glfw3.h>
 
-#include <header.h>
+#include <ProjectConfig.h>
+
+// Cmake options example check ProjectConfig.h.in
+#ifdef USE_HEADER
+ #include <Header.h> 
+#endif
 
 static void glfw_error_callback(int error, const char *description)
 {
@@ -15,6 +20,15 @@ static void glfw_error_callback(int error, const char *description)
 
 int main(int argc, char **argv)
 {
+
+#ifdef USE_HEADER
+  std::cout << "Result is: " << add(10, 10) << '\n';
+#else
+  std::cout << "USE_HEADER disabled\n";
+#endif
+
+  std::cout << argv[0] << "-Version-" << Project_VERSION_MAJOR << "." << Project_VERSION_MINOR << '\n';
+
   glfwSetErrorCallback(glfw_error_callback);
   if (!glfwInit())
     return 1;

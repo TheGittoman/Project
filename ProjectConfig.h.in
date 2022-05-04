@@ -1,0 +1,4 @@
+#define Project_VERSION_MAJOR @Project_VERSION_MAJOR@
+#define Project_VERSION_MINOR @Project_VERSION_MINOR@
+
+#cmakedefine USE_HEADER
