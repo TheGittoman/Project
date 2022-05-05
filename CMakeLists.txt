@@ -17,11 +17,12 @@ endif()
 # adds configure file that builds in /build directory as ProjectConfig.h
 configure_file(ProjectConfig.h.in ProjectConfig.h)
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
 
 add_subdirectory(external/glfw)
 
 add_subdirectory(external/imgui)
+
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
 
 target_include_directories(${PROJECT_NAME} 
   PUBLIC external/glfw/include
