@@ -77,6 +77,12 @@ int main(int argc, char **argv)
         counter++;
       ImGui::SameLine();
       ImGui::Text("counter = %d", counter);
+      if (counter > 10)
+        ImGui::Text("counter is more than 10!");
+
+      ImGui::BeginMainMenuBar();
+      ImGui::Button("Help");
+      ImGui::EndMainMenuBar();
 
       ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
       ImGui::End();
